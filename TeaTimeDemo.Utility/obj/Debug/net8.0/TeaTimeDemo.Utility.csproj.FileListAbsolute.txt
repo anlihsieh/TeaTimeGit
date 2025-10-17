@@ -22,3 +22,4 @@ C:\Users\anlih\OneDrive\Desktop\作品集\source\TeaTimeDemo\TeaTimeDemo.Utility
 C:\Users\anlih\OneDrive\Desktop\作品集\source\TeaTimeDemo\TeaTimeDemo.Utility\obj\Debug\net8.0\refint\TeaTimeDemo.Utility.dll
 C:\Users\anlih\OneDrive\Desktop\作品集\source\TeaTimeDemo\TeaTimeDemo.Utility\obj\Debug\net8.0\TeaTimeDemo.Utility.pdb
 C:\Users\anlih\OneDrive\Desktop\作品集\source\TeaTimeDemo\TeaTimeDemo.Utility\obj\Debug\net8.0\ref\TeaTimeDemo.Utility.dll
+C:\Users\anlih\OneDrive\Desktop\作品集\source\TeaTimeDemo\TeaTimeDemo.Utility\obj\Debug\net8.0\TeaTimeDemo.Utility.sourcelink.json

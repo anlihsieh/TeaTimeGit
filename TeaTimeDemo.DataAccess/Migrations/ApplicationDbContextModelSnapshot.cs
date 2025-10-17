@@ -270,6 +270,527 @@ namespace TeaTimeDemo.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TeaTimeDemo.Models.CustomGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<bool>("IsRequired")
+                        .HasColumnType("bit");
+
+                    b.Property<int>("MaxSelection")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MinSelection")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<int>("SelectionMode")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomGroups");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "尺寸",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "甜度",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "溫度",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            IsRequired = false,
+                            MaxSelection = 2,
+                            MinSelection = 0,
+                            Name = "加料",
+                            SelectionMode = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "尺寸",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 6,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "甜度",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 7,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "溫度",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 8,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "尺寸",
+                            SelectionMode = 1
+                        },
+                        new
+                        {
+                            Id = 9,
+                            IsRequired = true,
+                            MaxSelection = 1,
+                            MinSelection = 1,
+                            Name = "溫度",
+                            SelectionMode = 1
+                        });
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.CustomOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CustomGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MaxQty")
+                        .HasColumnType("int");
+
+                    b.Property<int>("MinQty")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomGroupId");
+
+                    b.ToTable("CustomOptions");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CustomGroupId = 1,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "中杯",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CustomGroupId = 1,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "大杯",
+                            Price = 5m
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CustomGroupId = 2,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "全糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CustomGroupId = 2,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "少糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CustomGroupId = 2,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "半糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CustomGroupId = 2,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "微糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CustomGroupId = 2,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "一分糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CustomGroupId = 2,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "無糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "正常冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 10,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "少冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 11,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "微冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 12,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "去冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 13,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "常溫",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 14,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "溫",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 15,
+                            CustomGroupId = 3,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "熱",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 16,
+                            CustomGroupId = 4,
+                            MaxQty = 2,
+                            MinQty = 0,
+                            Name = "珍珠",
+                            Price = 10m
+                        },
+                        new
+                        {
+                            Id = 17,
+                            CustomGroupId = 5,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "大杯",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 18,
+                            CustomGroupId = 6,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "全糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 19,
+                            CustomGroupId = 6,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "少糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 20,
+                            CustomGroupId = 6,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "半糖",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 21,
+                            CustomGroupId = 7,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "正常冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 22,
+                            CustomGroupId = 7,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "少冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 23,
+                            CustomGroupId = 7,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "微冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 24,
+                            CustomGroupId = 7,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "去冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 25,
+                            CustomGroupId = 8,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "中杯",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 26,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "正常冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 27,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "少冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 28,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "微冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 29,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "去冰",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 30,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "常溫",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 31,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "溫",
+                            Price = 0m
+                        },
+                        new
+                        {
+                            Id = 32,
+                            CustomGroupId = 9,
+                            MaxQty = 1,
+                            MinQty = 0,
+                            Name = "熱",
+                            Price = 0m
+                        });
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.CustomTemplate", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<string>("Description")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(30)
+                        .HasColumnType("nvarchar(30)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("CustomTemplates");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            Description = "",
+                            Name = "預設"
+                        });
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.CustomTemplateGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CustomGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("CustomTemplateId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomGroupId");
+
+                    b.HasIndex("CustomTemplateId");
+
+                    b.ToTable("CustomTemplateGroups");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CustomGroupId = 1,
+                            CustomTemplateId = 1,
+                            DisplayOrder = 0
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CustomGroupId = 2,
+                            CustomTemplateId = 1,
+                            DisplayOrder = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CustomGroupId = 3,
+                            CustomTemplateId = 1,
+                            DisplayOrder = 2
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CustomGroupId = 4,
+                            CustomTemplateId = 1,
+                            DisplayOrder = 3
+                        });
+                });
+
             modelBuilder.Entity("TeaTimeDemo.Models.OrderDetail", b =>
                 {
                     b.Property<int>("Id")
@@ -305,6 +826,36 @@ namespace TeaTimeDemo.DataAccess.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("OrderDetails");
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.OrderDetailCustomOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CustomOptionId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("OrderDetailId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Qty")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomOptionId");
+
+                    b.HasIndex("OrderDetailId");
+
+                    b.ToTable("OrderDetailCustomOptions");
                 });
 
             modelBuilder.Entity("TeaTimeDemo.Models.OrderHeader", b =>
@@ -428,6 +979,97 @@ namespace TeaTimeDemo.DataAccess.Migrations
                         });
                 });
 
+            modelBuilder.Entity("TeaTimeDemo.Models.ProductCustomGroup", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CustomGroupId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("DisplayOrder")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomGroupId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductCustomGroups");
+
+                    b.HasData(
+                        new
+                        {
+                            Id = 1,
+                            CustomGroupId = 5,
+                            DisplayOrder = 0,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 2,
+                            CustomGroupId = 6,
+                            DisplayOrder = 1,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 3,
+                            CustomGroupId = 7,
+                            DisplayOrder = 2,
+                            ProductId = 1
+                        },
+                        new
+                        {
+                            Id = 4,
+                            CustomGroupId = 1,
+                            DisplayOrder = 0,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 5,
+                            CustomGroupId = 2,
+                            DisplayOrder = 1,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 6,
+                            CustomGroupId = 3,
+                            DisplayOrder = 2,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 7,
+                            CustomGroupId = 4,
+                            DisplayOrder = 3,
+                            ProductId = 2
+                        },
+                        new
+                        {
+                            Id = 8,
+                            CustomGroupId = 8,
+                            DisplayOrder = 0,
+                            ProductId = 3
+                        },
+                        new
+                        {
+                            Id = 9,
+                            CustomGroupId = 9,
+                            DisplayOrder = 1,
+                            ProductId = 3
+                        });
+                });
+
             modelBuilder.Entity("TeaTimeDemo.Models.ShoppingCart", b =>
                 {
                     b.Property<int>("Id")
@@ -461,6 +1103,36 @@ namespace TeaTimeDemo.DataAccess.Migrations
                     b.HasIndex("ProductId");
 
                     b.ToTable("ShoppingCarts");
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.ShoppingCartCustomOption", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+
+                    b.Property<int>("CustomOptionId")
+                        .HasColumnType("int");
+
+                    b.Property<decimal>("Price")
+                        .HasPrecision(18, 2)
+                        .HasColumnType("decimal(18,2)");
+
+                    b.Property<int>("Qty")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ShoppingCartId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("CustomOptionId");
+
+                    b.HasIndex("ShoppingCartId");
+
+                    b.ToTable("ShoppingCartCustomOptions");
                 });
 
             modelBuilder.Entity("TeaTimeDemo.Models.Store", b =>
@@ -592,6 +1264,36 @@ namespace TeaTimeDemo.DataAccess.Migrations
                         .IsRequired();
                 });
 
+            modelBuilder.Entity("TeaTimeDemo.Models.CustomOption", b =>
+                {
+                    b.HasOne("TeaTimeDemo.Models.CustomGroup", "CustomGroup")
+                        .WithMany()
+                        .HasForeignKey("CustomGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomGroup");
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.CustomTemplateGroup", b =>
+                {
+                    b.HasOne("TeaTimeDemo.Models.CustomGroup", "CustomGroup")
+                        .WithMany()
+                        .HasForeignKey("CustomGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TeaTimeDemo.Models.CustomTemplate", "CustomTemplate")
+                        .WithMany()
+                        .HasForeignKey("CustomTemplateId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomGroup");
+
+                    b.Navigation("CustomTemplate");
+                });
+
             modelBuilder.Entity("TeaTimeDemo.Models.OrderDetail", b =>
                 {
                     b.HasOne("TeaTimeDemo.Models.OrderHeader", "OrderHeader")
@@ -609,6 +1311,25 @@ namespace TeaTimeDemo.DataAccess.Migrations
                     b.Navigation("OrderHeader");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.OrderDetailCustomOption", b =>
+                {
+                    b.HasOne("TeaTimeDemo.Models.CustomOption", "CustomOption")
+                        .WithMany()
+                        .HasForeignKey("CustomOptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TeaTimeDemo.Models.OrderDetail", "OrderDetail")
+                        .WithMany()
+                        .HasForeignKey("OrderDetailId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomOption");
+
+                    b.Navigation("OrderDetail");
                 });
 
             modelBuilder.Entity("TeaTimeDemo.Models.OrderHeader", b =>
@@ -633,6 +1354,25 @@ namespace TeaTimeDemo.DataAccess.Migrations
                     b.Navigation("Category");
                 });
 
+            modelBuilder.Entity("TeaTimeDemo.Models.ProductCustomGroup", b =>
+                {
+                    b.HasOne("TeaTimeDemo.Models.CustomGroup", "CustomGroup")
+                        .WithMany()
+                        .HasForeignKey("CustomGroupId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TeaTimeDemo.Models.Product", "Product")
+                        .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomGroup");
+
+                    b.Navigation("Product");
+                });
+
             modelBuilder.Entity("TeaTimeDemo.Models.ShoppingCart", b =>
                 {
                     b.HasOne("TeaTimeDemo.Models.ApplicationUser", "ApplicationUser")
@@ -650,6 +1390,25 @@ namespace TeaTimeDemo.DataAccess.Migrations
                     b.Navigation("ApplicationUser");
 
                     b.Navigation("Product");
+                });
+
+            modelBuilder.Entity("TeaTimeDemo.Models.ShoppingCartCustomOption", b =>
+                {
+                    b.HasOne("TeaTimeDemo.Models.CustomOption", "CustomOption")
+                        .WithMany()
+                        .HasForeignKey("CustomOptionId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("TeaTimeDemo.Models.ShoppingCart", "ShoppingCart")
+                        .WithMany()
+                        .HasForeignKey("ShoppingCartId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("CustomOption");
+
+                    b.Navigation("ShoppingCart");
                 });
 
             modelBuilder.Entity("TeaTimeDemo.Models.ApplicationUser", b =>

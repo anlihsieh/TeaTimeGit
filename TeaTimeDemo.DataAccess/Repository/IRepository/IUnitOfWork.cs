@@ -15,6 +15,13 @@ namespace TeaTimeDemo.DataAccess.Repository.IRepository
         IApplicationUserRepository ApplicationUser { get; }
         IOrderHeaderRepository OrderHeader { get; }
         IOrderDetailRepository OrderDetail { get; }
+        ICustomTemplateRepository CustomTemplate { get; }
+        ICustomGroupRepository CustomGroup { get; }
+        ICustomOptionRepository CustomOption { get; }
+        ICustomTemplateGroupRepository CustomTemplateGroup { get; }
+        IProductCustomGroupRepository ProductCustomGroup { get; }
+        IShoppingCartCustomOptionRepository ShoppingCartCustomOption { get; }
+        IOrderDetailCustomOptionRepository OrderDetailCustomOption { get; }
         void Save();
     }
 }

@@ -18,6 +18,13 @@ namespace TeaTimeDemo.DataAccess.Repository
         public IApplicationUserRepository ApplicationUser { get; private set; }
         public IOrderHeaderRepository OrderHeader { get; private set; }
         public IOrderDetailRepository OrderDetail { get; private set; }
+        public ICustomTemplateRepository CustomTemplate { get; private set; }
+        public ICustomGroupRepository CustomGroup { get; private set; }
+        public ICustomOptionRepository CustomOption { get; private set; }
+        public ICustomTemplateGroupRepository CustomTemplateGroup { get; private set; }
+        public IProductCustomGroupRepository ProductCustomGroup { get; private set; }
+        public IShoppingCartCustomOptionRepository ShoppingCartCustomOption { get; private set; }
+        public IOrderDetailCustomOptionRepository OrderDetailCustomOption { get; private set; }
 
         public UnitOfWork(ApplicationDbContext db)
         { 
@@ -29,6 +36,13 @@ namespace TeaTimeDemo.DataAccess.Repository
             ApplicationUser = new ApplicationUserRepository(_db);
             OrderHeader = new OrderHeaderRepository(_db);
             OrderDetail = new OrderDetailRepository(_db);
+            CustomTemplate = new CustomTemplateRepository(_db);
+            CustomGroup = new CustomGroupRepository(_db);
+            CustomOption = new CustomOptionRepository(_db);
+            CustomTemplateGroup = new CustomTemplateGroupRepository(_db);
+            ProductCustomGroup = new ProductCustomGroupRepository(_db);
+            ShoppingCartCustomOption = new ShoppingCartCustomOptionRepository(_db);
+            OrderDetailCustomOption = new OrderDetailCustomOptionRepository(_db);
         }
 
         public void Save()
